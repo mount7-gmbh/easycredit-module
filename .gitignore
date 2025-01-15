@@ -1,8 +1,9 @@
 /tests/reports/
 /source
 /var
+/build
 composer.lock
-
+.phpunit.result.cache
 # phpstorm project files
 .idea
 
