@@ -4,15 +4,17 @@
     "type": "oxideshop-module",
     "keywords": ["oxid", "modules", "eShop"],
     "homepage": "https://www.oxid-esales.com/en/home.html",
-    "license": [
-        "GPL-3.0-only",
-        "proprietary"
+    "license": "GPL-3.0-only",
+    "authors": [
+        {
+            "name": "Chris Smith",
+            "email": "cgsmith105@gmail.com",
+            "homepage": "https://www.fivedevs.com",
+            "role": "Developer"
+        }
     ],
     "extra": {
         "oxideshop": {
-            "blacklist-filter": [
-                "documentation/**/*.*"
-            ],
             "target-directory": "oxps/easycredit"
         }
     },
@@ -25,6 +27,7 @@
         }
     },
     "config": {
+        "lock": false,
         "allow-plugins": {
             "oxid-esales/oxideshop-unified-namespace-generator": true,
             "oxid-esales/oxideshop-composer-plugin": true
