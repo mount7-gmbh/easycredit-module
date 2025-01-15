@@ -18,6 +18,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Change log from README.md
 
+### Fixed
+
+- .gitignore file
+
 ## [5.0.0] - 2024-03-04
 
 ## [4.0.0-rc1] - 2023-11-14
