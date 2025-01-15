@@ -1,4 +1,6 @@
 /tests/reports/
+/source
+composer.lock
 # phpstorm project files
 .idea
 
