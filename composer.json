@@ -23,5 +23,11 @@
         "psr-4": {
             "OxidProfessionalServices\\EasyCredit\\": "../../../source/modules/oxps/easycredit"
         }
+    },
+    "config": {
+        "allow-plugins": {
+            "oxid-esales/oxideshop-unified-namespace-generator": true,
+            "oxid-esales/oxideshop-composer-plugin": true
+        }
     }
 }
