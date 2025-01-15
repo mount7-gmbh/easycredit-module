@@ -1,6 +1,8 @@
 /tests/reports/
 /source
+/var
 composer.lock
+
 # phpstorm project files
 .idea
 
@@ -20,7 +22,6 @@ Thumbs.db
 
 # composer itself is not needed
 composer.phar
-
 
 # Mac DS_Store Files
 .DS_Store
