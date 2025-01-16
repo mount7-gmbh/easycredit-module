@@ -1,5 +1,5 @@
 {
-  "name": "oxid-professional-services/easycredit-module",
+  "name": "mount7-gmbh/easycredit-module",
   "description": "The payment module by EasyCredit.",
   "type": "oxideshop-module",
   "keywords": [
@@ -7,13 +7,12 @@
     "modules",
     "eShop"
   ],
-  "homepage": "https://www.oxid-esales.com/en/home.html",
+  "homepage": "https://github.com/mount7-gmbh/easycredit-module",
   "license": "GPL-3.0-only",
   "authors": [
     {
       "name": "Chris Smith",
-      "email": "cgsmith105@gmail.com",
-      "homepage": "https://www.fivedevs.com",
+      "homepage": "https://www.mount7.com",
       "role": "Developer"
     }
   ],
