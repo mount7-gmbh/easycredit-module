@@ -34,7 +34,7 @@ composer update
 
 ## Bugs and Issues
 
-If you experience any bugs or issues, please report them in the section **module Easy Credit** of https://bugs.oxid-esales.com.
+If you experience any bugs or issues, please report them under issues in GitHub.
 
 ## License
 

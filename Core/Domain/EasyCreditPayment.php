@@ -30,7 +30,7 @@ class EasyCreditPayment extends EasyCreditPayment_parent
      */
     public function isEasyCreditInstallment()
     {
-        return self::isEasyCreditInstallmentById($this->getId());
+        return $this->isEasyCreditInstallmentById($this->getId());
     }
 
     /**
@@ -40,7 +40,7 @@ class EasyCreditPayment extends EasyCreditPayment_parent
      *
      * @return bool
      */
-    public static function isEasyCreditInstallmentById($paymentId)
+    public function isEasyCreditInstallmentById($paymentId)
     {
         return $paymentId == self::EASYCREDIT_PAYMENTID;
     }

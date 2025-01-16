@@ -195,7 +195,6 @@ class EasyCreditInitializeRequestBuilder implements EasyCreditInitializeRequestB
 
     protected function getRegisteredCustomerStatus($user)
     {
-        self::RISCS_BESTANDSKUNDE;
         $userGroups = $user->getUserGroups();
         if (count($userGroups)) {
             /** @var $userGroup Groups */
@@ -572,10 +571,22 @@ class EasyCreditInitializeRequestBuilder implements EasyCreditInitializeRequestB
         $user = $this->getUser();
         return array(
             'anrede'       => $this->getSalutation(),
-            'vorname'      => $user->oxuser__oxfname->value,
-            'nachname'     => $user->oxuser__oxlname->value,
+            'vorname'      => $this->sanitizeFieldName($user->oxuser__oxfname->value),
+            'nachname'     => $this->sanitizeFieldName($user->oxuser__oxlname->value),
             'geburtsdatum' => $this->convertBirthday()
         );
+    }
+
+    private function sanitizeFieldName($fieldName)
+    {
+        // String length correction
+        if (mb_strlen($fieldName) < 2) $fieldName = str_pad($fieldName, 2, "\x0", STR_PAD_RIGHT);
+        if (mb_strlen($fieldName) > 27) $fieldName = mb_substr($fieldName, 0, 27);
+
+        // Removal of invalid characters
+        $fieldName = preg_replace('/[^-a-zÀ-žA-ZäüößÄÖÜěščřžůďťňĎŇŤŠČŘŽŮĚO\'\.\, ]/u', '', $fieldName);
+
+        return $fieldName;
     }
 
     /**

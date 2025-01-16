@@ -3,48 +3,83 @@ declare(strict_types=1);
 
 namespace Unit\Core\Helper;
 
-use OxidEsales\Eshop\Application\Model\User;
 use OxidProfessionalServices\EasyCredit\Core\Helper\EasyCreditInitializeRequestBuilder;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 class EasyCreditInitializeRequestBuilderTest extends TestCase
 {
-    protected function setUp(): void
+
+
+    private function createUserMock(string $firstName, string $lastName, string $salutation = '', string $birthday): \stdClass
     {
-        $this->userMock = $this->getMockBuilder(stdClass::class)
-            ->addMethods(['oxuser__oxfname', 'oxuser__oxlname'])
-            ->getMock();
-
-        // Set up the mock methods
-        $this->userMock->method('oxuser__oxfname')->willReturn('John');
-        $this->userMock->method('oxuser__oxlname')->willReturn('Doe');
-
-        // Mock the object that has the getPersonals method
-        $this->classMock = $this->getMockBuilder(EasyCreditInitializeRequestBuilder::class)
-            ->onlyMethods(['getUser', 'getSalutation', 'convertBirthday']) // use 'onlyMethods' here
-            ->getMock();
-
-        // Setup mocked methods
-        $this->classMock->method('getUser')->willReturn($this->userMock);
-        $this->classMock->method('getSalutation')->willReturn('Mr.');
-        $this->classMock->method('convertBirthday')->willReturn('1980-01-01');
+        $userMock = new \stdClass();
+        $userMock->oxuser__oxfname = (object)['value' => $firstName];
+        $userMock->oxuser__oxlname = (object)['value' => $lastName];
+        $userMock->oxuser__oxsal = (object)['value' => $salutation];
+        $userMock->oxuser__oxbirthdate = (object)['value' => $birthday];
+        return $userMock;
     }
 
-    public function testGetPersonals(): void
+    private function createEasyCreditInitializeRequestBuilderMock(\stdClass $userMock): MockObject
     {
-        // Creating a reflection method
-        $reflection = new ReflectionMethod($this->classMock, 'getPersonals');
+        $mock = $this->getMockBuilder(EasyCreditInitializeRequestBuilder::class)
+            ->onlyMethods(['getUser'])
+            ->getMock();
+        $mock->method('getUser')->willReturn($userMock);
+        return $mock;
+    }
+
+    /**
+     * @dataProvider personalDetailsDataProvider
+     */
+    public function testGetPersonals(string $firstName, string $lastName, string $salutation, string $birthday, array $expectedResult): void
+    {
+        $userMock = $this->createUserMock($firstName, $lastName, $salutation, $birthday);
+        $builderMock = $this->createEasyCreditInitializeRequestBuilderMock($userMock);
+
+        $reflection = new \ReflectionMethod($builderMock, 'getPersonals');
         $reflection->setAccessible(true);
+        $personalDetails = $reflection->invoke($builderMock);
 
-        // Call the method
-        $result = $reflection->invoke($this->classMock);
-
-        // Assert the result
-        $this->assertSame([
-            'anrede' => 'Mr.',
-            'vorname' => 'John',
-            'nachname' => 'Doe',
-            'geburtsdatum' => '1980-01-01'
-        ], $result);
+        $this->assertSame($expectedResult, $personalDetails);
     }
+
+
+    public function personalDetailsDataProvider(): array
+    {
+        return [
+            ['John', 'Doe', 'MR', '1980-01-01', [
+                'anrede' => 'HERR',
+                'vorname' => 'John',
+                'nachname' => 'Doe',
+                'geburtsdatum' => '1980-01-01'
+            ]],
+            ['John', 'Doe', '', '0000-00-00', [
+                'anrede' => null,
+                'vorname' => 'John',
+                'nachname' => 'Doe',
+                'geburtsdatum' => null,
+            ]],
+            ['Mount7 ', 'Team', 'MRS', '0000-00-00', [
+                'anrede' => 'FRAU',
+                'vorname' => 'Mount ',
+                'nachname' => 'Team',
+                'geburtsdatum' => null,
+            ]],
+            ['M ', 'Team1234thatis longer than twenty sevengasdf', 'MRS', '0000-00-00', [
+                'anrede' => 'FRAU',
+                'vorname' => 'M ',
+                'nachname' => 'Teamthatis longer than ',
+                'geburtsdatum' => null,
+            ]],
+            ['ZäüößÄÖÜěščřžůďťňĎŇŤŠČŘŽŮĚO', 'Team1234thatis longer than twenty sevengasdf', 'MRS', '0000-00-00', [
+                'anrede' => 'FRAU',
+                'vorname' => 'ZäüößÄÖÜěščřžůďťňĎŇŤŠČŘŽŮĚO',
+                'nachname' => 'Teamthatis longer than ',
+                'geburtsdatum' => null,
+            ]],
+        ];
+    }
+
 }

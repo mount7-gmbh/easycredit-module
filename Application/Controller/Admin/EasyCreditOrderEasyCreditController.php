@@ -81,7 +81,8 @@ class EasyCreditOrderEasyCreditController extends \OxidEsales\Eshop\Application\
     {
         /** @var $order Order */
         $order = $this->getOrder();
-        return $order && EasyCreditPayment::isEasyCreditInstallmentById($order->getFieldData('oxpaymenttype'));
+        $easyCreditPayment = new EasyCreditPayment();
+        return $order && $easyCreditPayment->isEasyCreditInstallmentById($order->getFieldData('oxpaymenttype'));
     }
 
     /**
