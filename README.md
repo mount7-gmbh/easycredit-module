@@ -1,5 +1,7 @@
 # OXID Solution Catalyst easyCredit-Ratenkauf Module
 
+![main workflow](https://github.com/mount7-gmbh/easycredit-module/actions/workflows/php.yml/badge.svg)
+
 # Version 3.0.8
 
 ## Description
