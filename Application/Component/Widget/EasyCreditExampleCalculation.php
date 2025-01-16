@@ -46,7 +46,7 @@ class EasyCreditExampleCalculation extends WidgetController
     /**
      * Return the monthly fee to pay for credit.
      *
-     * @return string
+     * @return string|void
      */
     public function getExampleCalculationRate()
     {
@@ -121,7 +121,7 @@ class EasyCreditExampleCalculation extends WidgetController
     /**
      * Load example calculation from ec service.
      *
-     * @return false|\stdClass
+     * @return false|\stdClass|void
      * @throws SystemComponentException
      */
     protected function getExampleCalculationResponse()

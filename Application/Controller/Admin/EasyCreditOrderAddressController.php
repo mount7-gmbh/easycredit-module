@@ -33,7 +33,7 @@ class EasyCreditOrderAddressController extends EasyCreditOrderAddressController_
 
         $soxId = $this->_aViewData["oxid"] = $this->getEditObjectId();
 
-        if ($soxId != "-1" && isset($soxId)) {
+        if ($soxId != "-1") {
             // load object
             $oOrder = oxNew(Order::class);
             $oOrder->load($soxId);

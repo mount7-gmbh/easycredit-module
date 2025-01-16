@@ -32,3 +32,5 @@ phpunit.phar
 
 # vagrant runtime
 /.vagrant
+/.phpstorm.meta.php/oxid.meta.php
+/.ide-helper.php

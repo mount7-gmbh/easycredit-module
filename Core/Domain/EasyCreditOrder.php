@@ -21,6 +21,8 @@ use OxidEsales\Eshop\Core\Exception\ExceptionToDisplay;
 use OxidEsales\Eshop\Core\Exception\SystemComponentException;
 use OxidEsales\Eshop\Core\Field;
 use OxidEsales\Eshop\Core\Registry;
+use OxidEsales\EshopCommunity\Internal\Container\ContainerFactory;
+use OxidEsales\EshopCommunity\Internal\Framework\Database\QueryBuilderFactoryInterface;
 use OxidEsales\EshopProfessional\Core\DatabaseProvider;
 use OxidProfessionalServices\EasyCredit\Application\Model\EasyCreditTradingApiAccess;
 use OxidProfessionalServices\EasyCredit\Core\Api\EasyCreditWebServiceClientFactory;
@@ -373,7 +375,7 @@ class EasyCreditOrder extends EasyCreditOrder_parent {
     /**
      * Returns easycredit processdata
      *
-     * @return EasyCreditStorage
+     * @return EasyCreditStorage|null
      * @throws SystemComponentException
      */
     protected function getInstalmentStorage()
@@ -466,9 +468,17 @@ class EasyCreditOrder extends EasyCreditOrder_parent {
      */
     public function loadByECFunctionalId($functionalId)
     {
-        $viewName = $this->getViewName('oxorder');
-        $sql = 'SELECT oxid FROM ' . $viewName . ' WHERE `ecredfunctionalid` = ?';
-        $oxid = DatabaseProvider::getDb()->getOne($sql, [$functionalId]);
+        $container = ContainerFactory::getInstance()->getContainer();
+        $queryBuilderFactory = $container->get(QueryBuilderFactoryInterface::class);
+        $queryBuilder = $queryBuilderFactory->create();
+
+        $oxid = $queryBuilder->select('oxid')
+            ->from($this->getViewName('oxorder'))
+            ->where('ecredfunctionalid = :functionalId')
+            ->setParameter('functionalId', $functionalId)
+            ->execute()
+            ->fetchColumn(0);
+
         if (!$this->load($oxid)) {
             throw new EasyCreditException("No order with functional ID: $functionalId ");
         }

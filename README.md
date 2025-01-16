@@ -28,6 +28,12 @@ Run Composer again to remove Module from vendor
 ```bash
 composer update
 ```
+
+
+## Bugs and Issues
+
+If you experience any bugs or issues, please report them in the section **module Easy Credit** of https://bugs.oxid-esales.com.
+
 ## License
 
 [GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/)

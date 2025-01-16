@@ -236,7 +236,8 @@ class EasyCreditPaymentController extends EasyCreditPaymentController_parent
      *
      * @param string $articleId
      *
-     * @return Price
+     * @todo this should probably never return void
+     * @return Price|void
      * @throws SystemComponentException
      */
     public function getExampleCalculationPrice($articleId)

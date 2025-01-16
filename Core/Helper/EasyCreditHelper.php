@@ -32,7 +32,7 @@ class EasyCreditHelper
      * @param string $articleId
      * @param Basket $basket
      *
-     * @return Price
+     * @return Price|void
      * @throws SystemComponentException
      */
     public static function getExampleCalculationPrice($articleId, $basket)

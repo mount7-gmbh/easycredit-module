@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - autoload-dev to composer file for OXID devs to test locally
+- phpstan
 
 ### Changed
 

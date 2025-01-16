@@ -115,7 +115,7 @@ class EasyCreditOrderEasyCreditController extends \OxidEsales\Eshop\Application\
     protected function getOrder()
     {
         $soxId = $this->getEditObjectId();
-        if ($this->order === false && isset($soxId) && $soxId != '-1') {
+        if ($this->order === false && $soxId != '-1') {
             $this->order = oxNew(Order::class);
             $this->order->load($soxId);
         }
