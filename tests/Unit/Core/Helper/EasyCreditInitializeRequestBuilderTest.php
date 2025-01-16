@@ -1,5 +1,15 @@
 <?php
+
 declare(strict_types=1);
+
+/*
+ * This file is part of OXID EasyCredit module
+ *
+ * Copyright (C) Mount7 GmbH
+ * Portions Copyright (C) OXID eSales AG 2003-2022
+ *
+ * Licensed under the GNU GPL v3 - See the file LICENSE for details.
+ */
 
 namespace Unit\Core\Helper;
 
@@ -9,15 +19,13 @@ use PHPUnit\Framework\TestCase;
 
 class EasyCreditInitializeRequestBuilderTest extends TestCase
 {
-
-
     private function createUserMock(string $firstName, string $lastName, string $salutation = '', string $birthday): \stdClass
     {
         $userMock = new \stdClass();
-        $userMock->oxuser__oxfname = (object)['value' => $firstName];
-        $userMock->oxuser__oxlname = (object)['value' => $lastName];
-        $userMock->oxuser__oxsal = (object)['value' => $salutation];
-        $userMock->oxuser__oxbirthdate = (object)['value' => $birthday];
+        $userMock->oxuser__oxfname = (object) ['value' => $firstName];
+        $userMock->oxuser__oxlname = (object) ['value' => $lastName];
+        $userMock->oxuser__oxsal = (object) ['value' => $salutation];
+        $userMock->oxuser__oxbirthdate = (object) ['value' => $birthday];
         return $userMock;
     }
 
@@ -53,7 +61,7 @@ class EasyCreditInitializeRequestBuilderTest extends TestCase
                 'anrede' => 'HERR',
                 'vorname' => 'John',
                 'nachname' => 'Doe',
-                'geburtsdatum' => '1980-01-01'
+                'geburtsdatum' => '1980-01-01',
             ]],
             ['John', 'Doe', '', '0000-00-00', [
                 'anrede' => null,

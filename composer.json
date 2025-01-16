@@ -55,6 +55,9 @@
       "@php ide-helper.php",
       "@php ./vendor/bin/phpunit",
       "@php ./vendor/bin/phpstan --no-progress"
+    ],
+    "style": [
+      "@php ./vendor/bin/php-cs-fixer fix --config .php-cs-fixer.dist.php"
     ]
   }
 }

@@ -1,36 +1,34 @@
-# OXID Solution Catalyst easyCredit-Ratenkauf Module
+# Mount7 GmbH easyCredit-Ratenkauf Module
 
 ![main workflow](https://github.com/mount7-gmbh/easycredit-module/actions/workflows/php.yml/badge.svg)
-
-# Version 3.0.8
 
 ## Description
 
  * First standalone release of the easyCredit-Ratenkauf Module
  * Supports payment type installment plan
- * Supports handling over the oxid admin backend only
+ * Supports handling over the oxid admin backend
 
 ## Installation
 
 Use Composer to add the module to your project
 ```bash
-composer require oxid-professional-services/easycredit-module
+composer require mount7-gmbh/easycredit-module
 ```
 
  * Activate the module in administration area
- * clear tmp and regenerate views
- * Make sure to take care of all the settings, options and credentials described in the user manual
+ * Clear tmp and regenerate views
+ * Make sure to take care of all the settings, options and credentials in under the settings page in the module
 
 ## Uninstall
 
  * Deactivate the module in administration area
- * remove "oxid-professional-services/easycredit-module" from your composer.json
+ * Remove "mount7-gmbh/easycredit-module" from your composer.json or run `composer remove mount7-gmbh/easycredit-module`
 
-Run Composer again to remove Module from vendor
+Run Composer again to remove module from vendor
+
 ```bash
 composer update
 ```
-
 
 ## Bugs and Issues
 

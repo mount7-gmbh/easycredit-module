@@ -2,6 +2,15 @@
 
 declare(strict_types=1);
 
+/*
+ * This file is part of OXID EasyCredit module
+ *
+ * Copyright (C) Mount7 GmbH
+ * Portions Copyright (C) OXID eSales AG 2003-2022
+ *
+ * Licensed under the GNU GPL v3 - See the file LICENSE for details.
+ */
+
 namespace Unit\Core\Helper;
 
 use OxidProfessionalServices\EasyCredit\Core\Helper\EasyCreditHelper;
@@ -9,7 +18,6 @@ use PHPUnit\Framework\TestCase;
 
 final class EasyCreditHelperTest extends TestCase
 {
-
     public function testHasPackstationFormatNormal()
     {
         $this->assertFalse(EasyCreditHelper::hasPackstationFormat('Teststraße', '7'));

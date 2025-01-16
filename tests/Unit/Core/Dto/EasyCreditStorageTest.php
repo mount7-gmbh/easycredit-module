@@ -1,5 +1,15 @@
 <?php
+
 declare(strict_types=1);
+
+/*
+ * This file is part of OXID EasyCredit module
+ *
+ * Copyright (C) Mount7 GmbH
+ * Portions Copyright (C) OXID eSales AG 2003-2022
+ *
+ * Licensed under the GNU GPL v3 - See the file LICENSE for details.
+ */
 
 namespace Unit\Core\Dto;
 
@@ -26,7 +36,7 @@ final class EasyCreditStorageTest extends TestCase
      *
      * @return   mixed Method return.
      */
-    public function invokeMethod(&$object, $methodName, array $parameters = array())
+    public function invokeMethod(&$object, $methodName, array $parameters = [])
     {
         $reflection = new \ReflectionClass(get_class($object));
         $method = $reflection->getMethod($methodName);
@@ -50,7 +60,7 @@ final class EasyCreditStorageTest extends TestCase
      * Verify that hasExpired correctly returns true if and only if
      * the last update occurred longer than the storage expiration range ago.
      */
-    public function testHasExpired() : void
+    public function testHasExpired(): void
     {
         $easyCreditStorage = new EasyCreditStorage('tbVorgangskennung', 'fachlicheVorgangskennung', 'authorizationHash', 100.0);
         $lastUpdateProperty = (new \ReflectionClass($easyCreditStorage))->getProperty('lastUpdate');

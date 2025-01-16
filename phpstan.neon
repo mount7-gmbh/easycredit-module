@@ -8,6 +8,7 @@ parameters:
     level: 1
     ignoreErrors:
         - '#::\$oxorder__#'
+#        - '#::\$oxuser__#'
 #            identifier: missingType.generics
 #        - '#PHPDoc tag @var#'
 #

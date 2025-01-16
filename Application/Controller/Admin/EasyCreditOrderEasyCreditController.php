@@ -1,14 +1,12 @@
 <?php
-/**
- * This Software is the property of OXID eSales and is protected
- * by copyright law - it is NOT Freeware.
+
+/*
+ * This file is part of OXID EasyCredit module
  *
- * Any unauthorized use of this software without a valid license key
- * is a violation of the license agreement and will be prosecuted by
- * civil and criminal law.
+ * Copyright (C) Mount7 GmbH
+ * Portions Copyright (C) OXID eSales AG 2003-2022
  *
- * @link      http://www.oxid-esales.com
- * @copyright (C) OXID eSales AG 2003-2021
+ * Licensed under the GNU GPL v3 - See the file LICENSE for details.
  */
 
 namespace OxidProfessionalServices\EasyCredit\Application\Controller\Admin;
@@ -98,7 +96,7 @@ class EasyCreditOrderEasyCreditController extends \OxidEsales\Eshop\Application\
             $reversalSuccess = Registry::getLang()->translateString('OXPS_EASY_CREDIT_ADMIN_REVERSAL_SUCCESS');
             $this->addTplParam('reversalsuccess', $reversalSuccess);
         } catch (EasyCreditException $e) {
-            if( 0 < $e->getCode()) {
+            if (0 < $e->getCode()) {
                 $reversalError = Registry::getLang()->translateString('OXPS_EASY_CREDIT_ADMIN_REVERSAL_ERROR_AMOUNT');
 
             } else {
@@ -224,8 +222,8 @@ class EasyCreditOrderEasyCreditController extends \OxidEsales\Eshop\Application\
             # match reversal amount to max open amount
             $service               = $this->getService();
             $orderData             = $service->getOrderData();
-            $maxReversalAmount     = (float)$orderData[0]->bestellwertAktuell;
-            $requestReversalAmount = (float)$request['amount'];
+            $maxReversalAmount     = (float) $orderData[0]->bestellwertAktuell;
+            $requestReversalAmount = (float) $request['amount'];
             if ($requestReversalAmount > $maxReversalAmount || 0 >= $requestReversalAmount) {
                 throw new EasyCreditException("Requested reversal greater than actual amount", 10);
             }

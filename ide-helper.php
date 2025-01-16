@@ -1,5 +1,15 @@
 <?php
+
 declare(strict_types=1);
+
+/*
+ * This file is part of OXID EasyCredit module
+ *
+ * Copyright (C) Mount7 GmbH
+ * Portions Copyright (C) OXID eSales AG 2003-2022
+ *
+ * Licensed under the GNU GPL v3 - See the file LICENSE for details.
+ */
 
 use OxidEsales\EshopIdeHelper\Core\DirectoryScanner;
 use OxidEsales\EshopIdeHelper\Core\ModuleExtendClassMapProvider;

@@ -1,22 +1,17 @@
 <?php
-/**
- * This Software is the property of OXID eSales and is protected
- * by copyright law - it is NOT Freeware.
+
+/*
+ * This file is part of OXID EasyCredit module
  *
- * Any unauthorized use of this software without a valid license key
- * is a violation of the license agreement and will be prosecuted by
- * civil and criminal law.
+ * Copyright (C) Mount7 GmbH
+ * Portions Copyright (C) OXID eSales AG 2003-2022
  *
- * @category      module
- * @package       easycredit
- * @author        OXID Professional Services
- * @link          http://www.oxid-esales.com
- * @copyright (C) OXID eSales AG 2003-2018
+ * Licensed under the GNU GPL v3 - See the file LICENSE for details.
  */
 
 $sLangName = 'Deutsch';
 
-$aLang = array(
+$aLang = [
     'charset' => 'UTF-8',
 
     'OXPS_EASY_CREDIT_FINANCE_FROM'                          => 'Finanzieren ab',
@@ -47,5 +42,5 @@ $aLang = array(
     'OXPS_EASY_CREDIT_PAYMENT_PROFILEDATA_CAPTION'           => 'Für eine optimale Ratenentscheidung vervollständigen Sie bitte diese Profildaten',
     'OXPS_EASY_CREDIT_VALIDATION_ERROR'                      => 'Es ist ein Fehler aufgetreten.',
     'OXPS_EASY_CREDIT_ADMIN_DELIVERY_STATE_LIEFERUNG_MELDEN' => 'Lieferung melden',
-    'OXPS_EASY_CREDIT_ORDER_INFO'                            =>'Bestellinformation',
-);
+    'OXPS_EASY_CREDIT_ORDER_INFO'                            => 'Bestellinformation',
+];

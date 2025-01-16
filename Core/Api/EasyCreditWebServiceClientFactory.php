@@ -1,14 +1,12 @@
 <?php
-/**
- * This Software is the property of OXID eSales and is protected
- * by copyright law - it is NOT Freeware.
+
+/*
+ * This file is part of OXID EasyCredit module
  *
- * Any unauthorized use of this software without a valid license key
- * is a violation of the license agreement and will be prosecuted by
- * civil and criminal law.
+ * Copyright (C) Mount7 GmbH
+ * Portions Copyright (C) OXID eSales AG 2003-2022
  *
- * @link      http://www.oxid-esales.com
- * @copyright (C) OXID eSales AG 2003-2021
+ * Licensed under the GNU GPL v3 - See the file LICENSE for details.
  */
 
 namespace OxidProfessionalServices\EasyCredit\Core\Api;
@@ -39,8 +37,8 @@ class EasyCreditWebServiceClientFactory
     public static function getWebServiceClient(
         $serviceName,
         EasyCreditDic $dic,
-        array $additionalArguments = array(),
-        array $queryArguments = array(),
+        array $additionalArguments = [],
+        array $queryArguments = [],
         $addheaders = false
     ) {
         /** @var EasyCreditWebServiceClient $client */
@@ -67,12 +65,12 @@ class EasyCreditWebServiceClientFactory
             );
         }
 
-        if( $addheaders ) {
-            $headers = array(
+        if ($addheaders) {
+            $headers = [
                 "Content-Type: application/json;charset=UTF-8",
                 "tbk-rk-shop: " . $apiConfig->getWebshopId(),
-                "tbk-rk-token: " . $apiConfig->getWebShopToken()
-            );
+                "tbk-rk-token: " . $apiConfig->getWebShopToken(),
+            ];
             $client->setRequestHeaders($headers);
         }
 

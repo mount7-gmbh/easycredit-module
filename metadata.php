@@ -1,17 +1,12 @@
 <?php
-/**
- * This Software is the property of OXID eSales and is protected
- * by copyright law - it is NOT Freeware.
+
+/*
+ * This file is part of OXID EasyCredit module
  *
- * Any unauthorized use of this software without a valid license key
- * is a violation of the license agreement and will be prosecuted by
- * civil and criminal law.
+ * Copyright (C) Mount7 GmbH
+ * Portions Copyright (C) OXID eSales AG 2003-2022
  *
- * @category      module
- * @package       easycredit
- * @author        OXID Professional Services
- * @link          http://www.oxid-esales.com
- * @copyright (C) OXID eSales AG 2003-2018
+ * Licensed under the GNU GPL v3 - See the file LICENSE for details.
  */
 
 /**
@@ -25,18 +20,18 @@ $sMetadataVersion = '2.1';
 $aModule = [
     'id'          => 'oxpseasycredit',
     'title'       => [
-        'de' => 'easyCredit-Ratenkauf für OXID',
-        'en' => 'easyCredit-Ratenkauf for OXID',
+        'de' => '<b>[Mount7 GmbH]</b> easyCredit-Ratenkauf für OXID',
+        'en' => '<b>[Mount7 GmbH]</b> easyCredit-Ratenkauf for OXID',
     ],
     'description' => [
         'de' => 'easyCredit-Ratenkauf für Einkäufe in OXID nutzen',
         'en' => 'Use easyCredit-Ratenkauf for purchases in OXID',
     ],
-    'thumbnail'   => 'out/pictures/picture.png',
-    'version'     => '3.0.8',
-    'author'      => 'OXID Solution Catalysts',
-    'url'         => 'https://www.oxid-esales.com',
-    'email'       => 'info@oxid-esales.com',
+    'thumbnail'   => 'out/pictures/logo.png',
+    'version'     => '1.0.0',
+    'author'      => 'Mount7 GmbH',
+    'url'         => 'https://github.com/mount7-gmbh/easycredit-module',
+    'email'       => 'info@mount7.com',
     'controllers' => [
         'EasyCreditDispatcher'              => \OxidProfessionalServices\EasyCredit\Application\Controller\EasyCreditDispatcherController::class,
         # Admin
@@ -66,7 +61,7 @@ $aModule = [
         \OxidEsales\Eshop\Core\Session::class                               => \OxidProfessionalServices\EasyCredit\Core\Domain\EasyCreditSession::class,
         \OxidEsales\Eshop\Application\Model\Payment::class                  => \OxidProfessionalServices\EasyCredit\Core\Domain\EasyCreditPayment::class,
         \OxidEsales\Eshop\Application\Model\Basket::class                   => \OxidProfessionalServices\EasyCredit\Core\Domain\EasyCreditBasket::class,
-        \OxidEsales\Eshop\Application\Model\Order::class                    => \OxidProfessionalServices\EasyCredit\Core\Domain\EasyCreditOrder::class
+        \OxidEsales\Eshop\Application\Model\Order::class                    => \OxidProfessionalServices\EasyCredit\Core\Domain\EasyCreditOrder::class,
     ],
     'templates'   => [
         'page/checkout/inc/payment_easycreditinstallment.tpl' => 'oxps/easycredit/Application/views/page/checkout/inc/oxpseasycredit_payment_easycreditinstallment.tpl',
@@ -194,7 +189,7 @@ $aModule = [
             'template' => 'order_main.tpl',
             'block'    => 'admin_order_main_form_details',
             'file'     => 'Application/views/blocks/admin/oxpseasycredit_order_main_form_details.tpl',
-        ]
+        ],
     ],
     'settings'    => [
         [
@@ -256,7 +251,7 @@ $aModule = [
             'name'  => 'oxpsECLogging',
             'type'  => 'bool',
             'value' => false,
-        ]
+        ],
     ],
     'events'      => [
         'onActivate'   => '\OxidProfessionalServices\EasyCredit\Core\Events::onActivate',
