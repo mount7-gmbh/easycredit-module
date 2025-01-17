@@ -1,0 +1,11 @@
+pipelines:
+  default:
+    - step:
+        name: PHP Composer
+        image: php:7.4
+        script:
+          - apt-get update && apt-get install -q -y unzip git
+          - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+          - composer validate --strict
+          - composer install --prefer-dist --no-progress --no-interaction
+          - composer run-script test

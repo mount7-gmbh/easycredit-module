@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - phpstan
 - GitHub actions for building project
 - php-cs-fixer
+- bitbucket pipeline file
 
 ### Changed
 
@@ -33,5 +34,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - .gitignore file
 - Validation on first and last name according to EasyCredit model
 
-[unreleased]: https://github.com/mount7-gmbh/easycredit-module/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/mount7-gmbh/easycredit-module/releases/tag/v1.0.0
+[unreleased]: https://bitbucket.org/mount7freiburg/easycredit-module/branches/compare/v1.0.0...HEAD
+[1.0.0]: https://bitbucket.org/mount7freiburg/easycredit-module/releases/tag/v1.0.0
