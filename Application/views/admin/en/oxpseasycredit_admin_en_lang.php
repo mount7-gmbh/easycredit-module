@@ -14,7 +14,7 @@ $sLangName = 'English';
 $aLang = [
     'charset' => 'UTF-8',
 
-    'oxpseasycredit' => 'OXPS Easy Credit',
+    'oxpseasycredit' => 'Mount7 GmbH Easy Credit',
 
     'SHOP_MODULE_GROUP_EasyCreditApi'                         => 'API',
     'SHOP_MODULE_GROUP_EasyCreditExampleCalculation'          => 'Example Calculation',

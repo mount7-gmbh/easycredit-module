@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of OXID EasyCredit module
+ * This file is part of Mount7 GmbH EasyCredit module
  *
  * Copyright (C) Mount7 GmbH
  * Portions Copyright (C) OXID eSales AG 2003-2022

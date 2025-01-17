@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of OXID EasyCredit module
+ * This file is part of Mount7 GmbH EasyCredit module
  *
  * Copyright (C) Mount7 GmbH
  * Portions Copyright (C) OXID eSales AG 2003-2022
@@ -9,7 +9,7 @@
  * Licensed under the GNU GPL v3 - See the file LICENSE for details.
  */
 
-namespace OxidProfessionalServices\EasyCredit\Application\Controller;
+namespace Mount7\EasyCredit\Application\Controller;
 
 use OxidEsales\Eshop\Application\Controller\FrontendController;
 use OxidEsales\Eshop\Application\Model\Address;
@@ -18,16 +18,16 @@ use OxidEsales\Eshop\Application\Model\Order;
 use OxidEsales\Eshop\Core\Exception\ExceptionToDisplay;
 use OxidEsales\Eshop\Core\Exception\SystemComponentException;
 use OxidEsales\Eshop\Core\Registry;
-use OxidProfessionalServices\EasyCredit\Core\Api\EasyCreditWebServiceClientFactory;
-use OxidProfessionalServices\EasyCredit\Core\Di\EasyCreditApiConfig;
-use OxidProfessionalServices\EasyCredit\Core\Di\EasyCreditDic;
-use OxidProfessionalServices\EasyCredit\Core\Di\EasyCreditDicFactory;
-use OxidProfessionalServices\EasyCredit\Core\Di\EasyCreditDicSession;
-use OxidProfessionalServices\EasyCredit\Core\Dto\EasyCreditStorage;
-use OxidProfessionalServices\EasyCredit\Core\Exception\EasyCreditException;
-use OxidProfessionalServices\EasyCredit\Core\Helper\EasyCreditHelper;
-use OxidProfessionalServices\EasyCredit\Core\Helper\EasyCreditInitializeRequestBuilder;
-use OxidProfessionalServices\EasyCredit\Core\Helper\EasyCreditInitializeRequestBuilderInterface;
+use Mount7\EasyCredit\Core\Api\EasyCreditWebServiceClientFactory;
+use Mount7\EasyCredit\Core\Di\EasyCreditApiConfig;
+use Mount7\EasyCredit\Core\Di\EasyCreditDic;
+use Mount7\EasyCredit\Core\Di\EasyCreditDicFactory;
+use Mount7\EasyCredit\Core\Di\EasyCreditDicSession;
+use Mount7\EasyCredit\Core\Dto\EasyCreditStorage;
+use Mount7\EasyCredit\Core\Exception\EasyCreditException;
+use Mount7\EasyCredit\Core\Helper\EasyCreditHelper;
+use Mount7\EasyCredit\Core\Helper\EasyCreditInitializeRequestBuilder;
+use Mount7\EasyCredit\Core\Helper\EasyCreditInitializeRequestBuilderInterface;
 
 /**
  * EasyCredit checkout dispatcher class

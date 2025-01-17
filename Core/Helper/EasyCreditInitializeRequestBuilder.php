@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of OXID EasyCredit module
+ * This file is part of Mount7 GmbH EasyCredit module
  *
  * Copyright (C) Mount7 GmbH
  * Portions Copyright (C) OXID eSales AG 2003-2022
@@ -9,7 +9,7 @@
  * Licensed under the GNU GPL v3 - See the file LICENSE for details.
  */
 
-namespace OxidProfessionalServices\EasyCredit\Core\Helper;
+namespace Mount7\EasyCredit\Core\Helper;
 
 use OxidEsales\Eshop\Application\Model\Address;
 use OxidEsales\Eshop\Application\Model\Article;
@@ -24,9 +24,9 @@ use OxidEsales\Eshop\Application\Model\User;
 use OxidEsales\Eshop\Core\Config;
 use OxidEsales\Eshop\Core\Exception\SystemComponentException;
 use OxidEsales\Eshop\Core\Session;
-use OxidProfessionalServices\EasyCredit\Core\Di\EasyCreditApiConfig;
-use OxidProfessionalServices\EasyCredit\Core\Di\EasyCreditDic;
-use OxidProfessionalServices\EasyCredit\Core\Di\EasyCreditDicFactory;
+use Mount7\EasyCredit\Core\Di\EasyCreditApiConfig;
+use Mount7\EasyCredit\Core\Di\EasyCreditDic;
+use Mount7\EasyCredit\Core\Di\EasyCreditDicFactory;
 
 /**
  * Class to build the data for request "VorgangInitialisierenRequest" as part of initialization of easyCredit

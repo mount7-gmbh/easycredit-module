@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of OXID EasyCredit module
+ * This file is part of Mount7 GmbH EasyCredit module
  *
  * Copyright (C) Mount7 GmbH
  * Portions Copyright (C) OXID eSales AG 2003-2022
@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Unit\Core\Dto;
 
-use OxidProfessionalServices\EasyCredit\Core\Dto\EasyCreditStorage;
+use Mount7\EasyCredit\Core\Dto\EasyCreditStorage;
 use PHPUnit\Framework\TestCase;
 
 final class EasyCreditStorageTest extends TestCase

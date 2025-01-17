@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of OXID EasyCredit module
+ * This file is part of Mount7 GmbH EasyCredit module
  *
  * Copyright (C) Mount7 GmbH
  * Portions Copyright (C) OXID eSales AG 2003-2022
@@ -9,14 +9,14 @@
  * Licensed under the GNU GPL v3 - See the file LICENSE for details.
  */
 
-namespace OxidProfessionalServices\EasyCredit\Application\Controller\Admin;
+namespace Mount7\EasyCredit\Application\Controller\Admin;
 
 use OxidEsales\Eshop\Application\Model\Order;
 use OxidEsales\Eshop\Core\Registry;
-use OxidProfessionalServices\EasyCredit\Application\Model\EasyCreditTradingApiAccess;
-use OxidProfessionalServices\EasyCredit\Core\Di\EasyCreditDicFactory;
-use OxidProfessionalServices\EasyCredit\Core\Domain\EasyCreditPayment;
-use OxidProfessionalServices\EasyCredit\Core\Exception\EasyCreditException;
+use Mount7\EasyCredit\Application\Model\EasyCreditTradingApiAccess;
+use Mount7\EasyCredit\Core\Di\EasyCreditDicFactory;
+use Mount7\EasyCredit\Core\Domain\EasyCreditPayment;
+use Mount7\EasyCredit\Core\Exception\EasyCreditException;
 
 /**
  * Order admin class for easyCredit

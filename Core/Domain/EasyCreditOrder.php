@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of OXID EasyCredit module
+ * This file is part of Mount7 GmbH EasyCredit module
  *
  * Copyright (C) Mount7 GmbH
  * Portions Copyright (C) OXID eSales AG 2003-2022
@@ -9,7 +9,7 @@
  * Licensed under the GNU GPL v3 - See the file LICENSE for details.
  */
 
-namespace OxidProfessionalServices\EasyCredit\Core\Domain;
+namespace Mount7\EasyCredit\Core\Domain;
 
 use OxidEsales\Eshop\Application\Model\Address;
 use OxidEsales\Eshop\Application\Model\Basket;
@@ -22,16 +22,16 @@ use OxidEsales\Eshop\Core\Registry;
 use OxidEsales\EshopCommunity\Internal\Container\ContainerFactory;
 use OxidEsales\EshopCommunity\Internal\Framework\Database\QueryBuilderFactoryInterface;
 use OxidEsales\EshopProfessional\Core\DatabaseProvider;
-use OxidProfessionalServices\EasyCredit\Application\Model\EasyCreditTradingApiAccess;
-use OxidProfessionalServices\EasyCredit\Core\Api\EasyCreditWebServiceClientFactory;
-use OxidProfessionalServices\EasyCredit\Core\Di\EasyCreditApiConfig;
-use OxidProfessionalServices\EasyCredit\Core\Di\EasyCreditDic;
-use OxidProfessionalServices\EasyCredit\Core\Di\EasyCreditDicFactory;
-use OxidProfessionalServices\EasyCredit\Core\Dto\EasyCreditStorage;
-use OxidProfessionalServices\EasyCredit\Core\Exception\EasyCreditException;
-use OxidProfessionalServices\EasyCredit\Core\Exception\EasyCreditInitializationFailedException;
-use OxidProfessionalServices\EasyCredit\Core\Helper\EasyCreditHelper;
-use OxidProfessionalServices\EasyCredit\Core\Helper\EasyCreditInitializeRequestBuilder;
+use Mount7\EasyCredit\Application\Model\EasyCreditTradingApiAccess;
+use Mount7\EasyCredit\Core\Api\EasyCreditWebServiceClientFactory;
+use Mount7\EasyCredit\Core\Di\EasyCreditApiConfig;
+use Mount7\EasyCredit\Core\Di\EasyCreditDic;
+use Mount7\EasyCredit\Core\Di\EasyCreditDicFactory;
+use Mount7\EasyCredit\Core\Dto\EasyCreditStorage;
+use Mount7\EasyCredit\Core\Exception\EasyCreditException;
+use Mount7\EasyCredit\Core\Exception\EasyCreditInitializationFailedException;
+use Mount7\EasyCredit\Core\Helper\EasyCreditHelper;
+use Mount7\EasyCredit\Core\Helper\EasyCreditInitializeRequestBuilder;
 
 /**
  * Class oxpsEasyCreditOxOrder

@@ -1,5 +1,5 @@
 {
-  "name": "mount7-gmbh/easycredit-module",
+  "name": "mount7/easycredit-module",
   "description": "The payment module by EasyCredit.",
   "type": "oxideshop-module",
   "keywords": [
@@ -23,7 +23,7 @@
   ],
   "extra": {
     "oxideshop": {
-      "target-directory": "oxps/easycredit"
+      "target-directory": "mount7/easycredit"
     }
   },
   "require": {
@@ -38,13 +38,13 @@
   },
   "autoload": {
     "psr-4": {
-      "OxidProfessionalServices\\EasyCredit\\": "../../../source/modules/oxps/easycredit"
+      "Mount7\\EasyCredit\\": "../../../source/modules/mount7/easycredit"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "OxidProfessionalServices\\EasyCredit\\Application\\": "./Application",
-      "OxidProfessionalServices\\EasyCredit\\Core\\": "./Core"
+      "Mount7\\EasyCredit\\Application\\": "./Application",
+      "Mount7\\EasyCredit\\Core\\": "./Core"
     }
   },
   "config": {

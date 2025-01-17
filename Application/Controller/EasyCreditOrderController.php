@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of OXID EasyCredit module
+ * This file is part of Mount7 GmbH EasyCredit module
  *
  * Copyright (C) Mount7 GmbH
  * Portions Copyright (C) OXID eSales AG 2003-2022
@@ -9,7 +9,7 @@
  * Licensed under the GNU GPL v3 - See the file LICENSE for details.
  */
 
-namespace OxidProfessionalServices\EasyCredit\Application\Controller;
+namespace Mount7\EasyCredit\Application\Controller;
 
 use OxidEsales\Eshop\Application\Model\Payment;
 use OxidEsales\Eshop\Core\Exception\ExceptionToDisplay;
@@ -17,9 +17,9 @@ use OxidEsales\Eshop\Core\Exception\SystemComponentException;
 use OxidEsales\Eshop\Core\Field;
 use OxidEsales\Eshop\Core\Registry;
 use OxidEsales\Eshop\Core\ViewConfig;
-use OxidProfessionalServices\EasyCredit\Core\Di\EasyCreditDic;
-use OxidProfessionalServices\EasyCredit\Core\Di\EasyCreditDicFactory;
-use OxidProfessionalServices\EasyCredit\Core\Di\EasyCreditDicSession;
+use Mount7\EasyCredit\Core\Di\EasyCreditDic;
+use Mount7\EasyCredit\Core\Di\EasyCreditDicFactory;
+use Mount7\EasyCredit\Core\Di\EasyCreditDicSession;
 
 /**
  * Order manager. Arranges user ordering data, checks/validates
