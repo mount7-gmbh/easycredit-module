@@ -3,8 +3,8 @@ parameters:
         - Application
         - Core
     scanDirectories:
-        - source # for OXID dependencies
-        - .phpstorm.meta.php # for _parent class definitions
+        - ./source # for OXID dependencies
+        - ./.phpstorm.meta.php # for _parent class definitions
     level: 1
     ignoreErrors:
         - '#::\$oxorder__#'
