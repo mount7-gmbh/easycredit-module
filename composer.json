@@ -11,6 +11,11 @@
   "license": "GPL-3.0-only",
   "authors": [
     {
+      "name": "Mario Lorenz",
+      "homepage": "https://www.oxid-esales.com/",
+      "role": "Developer"
+    },
+    {
       "name": "Chris Smith",
       "homepage": "https://www.mount7.com",
       "role": "Developer"
