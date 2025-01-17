@@ -2,7 +2,7 @@ pipelines:
   default:
     - step:
         name: PHP Composer
-        image: php:7.4
+        image: php:8.0
         script:
           - apt-get update && apt-get install -q -y unzip git
           - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
