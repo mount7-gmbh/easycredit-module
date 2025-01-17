@@ -5,6 +5,7 @@ pipelines:
         image: php:8.0
         script:
           - apt-get update && apt-get install -q -y unzip git
+          - export COMPOSER_ALLOW_SUPERUSER=1
           - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
           - composer validate --strict
           - composer install --prefer-dist --no-progress --no-interaction
