@@ -50,10 +50,10 @@ $aLang = [
     'OXPS_EASY_CREDIT_ADMIN_DELIVERY_STATE_LIEFERUNG_MELDEN' => 'Lieferung melden',
 
     'OXPS_EASY_CREDIT_ORDER_INFO'                            => 'Bestellinformation',
-    'OXPS_EASY_CREDIT_ERROR_FNAME_SMALL'                     => 'Vornamen muss mindestens zwei Zeichen lang sein.',
-    'OXPS_EASY_CREDIT_ERROR_FNAME_LONG'                      => 'Der Vorname darf maximal 27 Zeichen lang sein.',
-    'OXPS_EASY_CREDIT_ERROR_LNAME_SMALL'                     => 'Nachnamen muss mindestens zwei Zeichen lang sein.',
-    'OXPS_EASY_CREDIT_ERROR_LNAME_LONG'                      => 'Der Nachname darf maximal 27 Zeichen lang sein.',
-    'OXPS_EASY_CREDIT_ERROR_FNAME_CONTAINS_INVALID_CHAR'     => 'Ungültige Zeichen im Vornamensfeld: %s',
-    'OXPS_EASY_CREDIT_ERROR_LNAME_CONTAINS_INVALID_CHAR'     => 'Ungültige Zeichen im Nachnamensfeld: %s',
+    'OXPS_EASY_CREDIT_ERROR_FNAME_SMALL'                     => 'Der Vorname muss beim easyCredit-Ratenkauf mindestens zwei Zeichen lang sein.',
+    'OXPS_EASY_CREDIT_ERROR_FNAME_LONG'                      => 'Der Vorname darf bei easyCredit-Ratenkäufen maximal 27 Zeichen lang sein.',
+    'OXPS_EASY_CREDIT_ERROR_LNAME_SMALL'                     => 'Der Nachname muss beim easyCredit-Ratenkauf mindestens zwei Zeichen lang sein.',
+    'OXPS_EASY_CREDIT_ERROR_LNAME_LONG'                      => 'Der Nachname darf bei easyCredit-Ratenkäufen maximmal 27 Zeichen lang sein.',
+    'OXPS_EASY_CREDIT_ERROR_FNAME_CONTAINS_INVALID_CHAR'     => 'Ungültige Zeichen im Vornamensfeld beim easyCredit-Ratenkauf: %s',
+    'OXPS_EASY_CREDIT_ERROR_LNAME_CONTAINS_INVALID_CHAR'     => 'Ungültige Zeichen im Nachnamensfeld beim easyCredit-Ratenkauf: %s',
 ];

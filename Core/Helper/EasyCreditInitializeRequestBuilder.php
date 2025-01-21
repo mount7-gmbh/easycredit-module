@@ -608,15 +608,15 @@ class EasyCreditInitializeRequestBuilder implements EasyCreditInitializeRequestB
         $pattern = '/[^-a-zÀ-žA-ZäüößÄÖÜěščřžůďťňĎŇŤŠČŘŽŮĚO\'\.\, ]/';
 
         // Check for invalid characters in first name
-        if (preg_match($pattern, $fname, $matches)) {
-            $invalidChars = implode(' ', array_unique($matches));
+        if (preg_match_all($pattern, $fname, $matches)) {
+            $invalidChars = implode(', ', array_unique($matches[0]));
             $exceptionMessage = Registry::getLang()->translateString('OXPS_EASY_CREDIT_ERROR_FNAME_CONTAINS_INVALID_CHAR');
             throw new EasyCreditException(sprintf($exceptionMessage, $invalidChars));
         }
 
         // Check for invalid characters in last name
-        if (preg_match($pattern, $lname, $matches)) {
-            $invalidChars = implode(' ', array_unique($matches));
+        if (preg_match_all($pattern, $lname, $matches)) {
+            $invalidChars = implode(', ', array_unique($matches[0]));
             $exceptionMessage = Registry::getLang()->translateString('OXPS_EASY_CREDIT_ERROR_LNAME_CONTAINS_INVALID_CHAR');
             throw new EasyCreditException(sprintf($exceptionMessage, $invalidChars));
         }
