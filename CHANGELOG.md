@@ -15,12 +15,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - phpstan checks
 - phpcs checks and fixes
 
-## Removed
+### Removed
 
 - Change log removed from README.md
 - Static call in [EasyCreditPayment](Core/Domain/EasyCreditPayment.php)
 
-## 3.0.8
+## 3.0.8 - 2022-09-08
 - Rebranding easyCredit-Ratenkauf
 
 ## 3.0.7
@@ -61,12 +61,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Birthday is not required
 - Possibility to use own jqueryUI-Lib in Frontend
 
-## [2.0.4]
+## 2.0.4
 - Function-Check for OXID 6.2.3
 - easyCredit Orders are not changable (Discounts, add Articles...) in OXID-Backend
 
-## [2.0.0]
+## 2.0.0
 - Version for OXID6 installable via Composer
 
-## [1.0.0]
+## 1.0.0
 - Version for OXID4 installable via FTP
+
+
+[unreleased]: https://github.com/OXIDprojects/easycredit-module/compare/v3.0.8...HEAD
