@@ -16,7 +16,7 @@
 
 $sLangName = 'Deutsch';
 
-$aLang = array(
+$aLang = [
     'charset' => 'UTF-8',
 
     'OXPS_EASY_CREDIT_FINANCE_FROM'                          => 'Finanzieren ab',
@@ -47,13 +47,13 @@ $aLang = array(
     'OXPS_EASY_CREDIT_PAYMENT_PROFILEDATA_CAPTION'           => 'Für eine optimale Ratenentscheidung vervollständigen Sie bitte diese Profildaten',
     'OXPS_EASY_CREDIT_VALIDATION_ERROR'                      => 'Es ist ein Fehler aufgetreten.',
 
-    'OXPS_EASY_CREDIT_ADMIN_DELIVERY_STATE_LIEFERUNG_MELDEN'            => 'Lieferung melden',
+    'OXPS_EASY_CREDIT_ADMIN_DELIVERY_STATE_LIEFERUNG_MELDEN' => 'Lieferung melden',
 
-    'OXPS_EASY_CREDIT_ORDER_INFO'=>'Bestellinformation',
-    'OXPS_EASY_CREDIT_ORDER_'=>'',
-    'OXPS_EASY_CREDIT_ORDER_'=>'',
-    'OXPS_EASY_CREDIT_ORDER_'=>'',
-    'OXPS_EASY_CREDIT_ORDER_'=>'',
-    'OXPS_EASY_CREDIT_ORDER_'=>'',
-    'OXPS_EASY_CREDIT_ORDER_'=>'',
-);
+    'OXPS_EASY_CREDIT_ORDER_INFO'                            => 'Bestellinformation',
+    'OXPS_EASY_CREDIT_ERROR_FNAME_SMALL'                     => 'Vornamen muss mindestens zwei Zeichen lang sein.',
+    'OXPS_EASY_CREDIT_ERROR_FNAME_LONG'                      => 'Der Vorname darf maximal 27 Zeichen lang sein.',
+    'OXPS_EASY_CREDIT_ERROR_LNAME_SMALL'                     => 'Nachnamen muss mindestens zwei Zeichen lang sein.',
+    'OXPS_EASY_CREDIT_ERROR_LNAME_LONG'                      => 'Der Nachname darf maximal 27 Zeichen lang sein.',
+    'OXPS_EASY_CREDIT_ERROR_FNAME_CONTAINS_INVALID_CHAR'     => 'Ungültige Zeichen im Vornamensfeld: %s',
+    'OXPS_EASY_CREDIT_ERROR_LNAME_CONTAINS_INVALID_CHAR'     => 'Ungültige Zeichen im Nachnamensfeld: %s',
+];
