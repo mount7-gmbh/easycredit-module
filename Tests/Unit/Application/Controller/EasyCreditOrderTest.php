@@ -17,9 +17,9 @@ use OxidProfessionalServices\EasyCredit\Core\Di\EasyCreditDicConfig;
 use OxidProfessionalServices\EasyCredit\Core\Di\EasyCreditDicFactory;
 use OxidProfessionalServices\EasyCredit\Core\Di\EasyCreditDicSession;
 use OxidProfessionalServices\EasyCredit\Core\Domain\EasyCreditOrder;
-use OxidProfessionalServices\EasyCredit\Core\Domain\EasyCreditPayment;
 use OxidProfessionalServices\EasyCredit\Core\Domain\EasyCreditSession;
 use OxidProfessionalServices\EasyCredit\Core\Dto\EasyCreditStorage;
+use OxidProfessionalServices\EasyCredit\Core\Helper\EasyCreditHelper;
 use OxidProfessionalServices\EasyCredit\Core\PayLoad\EasyCreditPayloadFactory;
 
 /**
@@ -91,7 +91,7 @@ class EasyCreditOrderTest extends UnitTestCase
         $session->setVariable(EasyCreditSession::API_CONFIG_STORAGE, serialize($storage));
 
         $payment = oxNew(Payment::class);
-        $payment->setId(EasyCreditPayment::EASYCREDIT_PAYMENTID);
+        $payment->setId(EasyCreditHelper::EASYCREDIT_PAYMENTID);
 
         $order = $this->getMock(EasyCreditOrder::class, ['getDic', 'parentGetPayment']);
         $order->expects($this->any())->method('getDic')->willReturn($dic);
@@ -118,7 +118,7 @@ class EasyCreditOrderTest extends UnitTestCase
 
         $payment = oxNew(Payment::class);
         $payment->oxpayments__oxdesc = new Field('test payment');
-        $payment->setId(EasyCreditPayment::EASYCREDIT_PAYMENTID);
+        $payment->setId(EasyCreditHelper::EASYCREDIT_PAYMENTID);
 
         $order = $this->getMock(EasyCreditOrder::class, ['getDic', 'parentGetPayment']);
         $order->expects($this->any())->method('getDic')->willReturn($dic);
@@ -145,7 +145,7 @@ class EasyCreditOrderTest extends UnitTestCase
 
         $payment = oxNew(Payment::class);
         $payment->oxpayments__oxdesc = new Field('test payment');
-        $payment->setId(EasyCreditPayment::EASYCREDIT_PAYMENTID);
+        $payment->setId(EasyCreditHelper::EASYCREDIT_PAYMENTID);
 
         $viewConfig = $this->getMock(ViewConfig::class, ['getModulePath']);
         $viewConfig->expects($this->any())->method('getModulePath')->willThrowException(new \Exception('TEST'));
@@ -166,7 +166,7 @@ class EasyCreditOrderTest extends UnitTestCase
 
         $payment = oxNew(Payment::class);
         $payment->oxpayments__oxdesc = new Field('test payment');
-        $payment->setId(EasyCreditPayment::EASYCREDIT_PAYMENTID);
+        $payment->setId(EasyCreditHelper::EASYCREDIT_PAYMENTID);
 
         $order = $this->getMock(EasyCreditOrder::class, ['getDic', 'parentGetPayment']);
         $order->expects($this->any())->method('getDic')->willReturn($dic);

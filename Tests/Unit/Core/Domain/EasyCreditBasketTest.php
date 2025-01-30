@@ -21,9 +21,9 @@ use OxidEsales\Eshop\Core\Price;
 use OxidEsales\TestingLibrary\UnitTestCase;
 use OxidProfessionalServices\EasyCredit\Core\Di\EasyCreditDic;
 use OxidProfessionalServices\EasyCredit\Core\Domain\EasyCreditBasket;
-use OxidProfessionalServices\EasyCredit\Core\Domain\EasyCreditPayment;
 use OxidProfessionalServices\EasyCredit\Core\Domain\EasyCreditSession;
 use OxidProfessionalServices\EasyCredit\Core\Dto\EasyCreditStorage;
+use OxidProfessionalServices\EasyCredit\Core\Helper\EasyCreditHelper;
 
 /**
  * Class EasyCreditOxBasketTest
@@ -57,7 +57,7 @@ class EasyCreditBasketTest extends UnitTestCase
     public function testGetInterestsAmount(): void
     {
         $session = oxNew(EasyCreditSession::class);
-        $session->setVariable('paymentid', EasyCreditPayment::EASYCREDIT_PAYMENTID);
+        $session->setVariable('paymentid', EasyCreditHelper::EASYCREDIT_PAYMENTID);
 
         $dic = $this->getMock(
             EasyCreditDic::class,
@@ -79,7 +79,7 @@ class EasyCreditBasketTest extends UnitTestCase
     public function testGetInterestsAmountNoStorage(): void
     {
         $session = oxNew(EasyCreditSession::class);
-        $session->setVariable('paymentid', EasyCreditPayment::EASYCREDIT_PAYMENTID);
+        $session->setVariable('paymentid', EasyCreditHelper::EASYCREDIT_PAYMENTID);
 
         $dic = $this->getMock(
             EasyCreditDic::class,
@@ -136,7 +136,7 @@ class EasyCreditBasketTest extends UnitTestCase
     public function testCalcInterestsCost(): void
     {
         $session = oxNew(EasyCreditSession::class);
-        $session->setVariable('paymentid', EasyCreditPayment::EASYCREDIT_PAYMENTID);
+        $session->setVariable('paymentid', EasyCreditHelper::EASYCREDIT_PAYMENTID);
 
         $dic = $this->getMock(
             EasyCreditDic::class,
