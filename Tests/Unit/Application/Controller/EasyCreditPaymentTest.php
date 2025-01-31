@@ -14,8 +14,8 @@ use OxidProfessionalServices\EasyCredit\Core\Di\EasyCreditDic;
 use OxidProfessionalServices\EasyCredit\Core\Di\EasyCreditDicConfig;
 use OxidProfessionalServices\EasyCredit\Core\Di\EasyCreditDicFactory;
 use OxidProfessionalServices\EasyCredit\Core\Di\EasyCreditDicSession;
-use OxidProfessionalServices\EasyCredit\Core\Domain\EasyCreditPayment;
 use OxidProfessionalServices\EasyCredit\Core\Exception\EasyCreditException;
+use OxidProfessionalServices\EasyCredit\Core\Helper\EasyCreditHelper;
 use OxidProfessionalServices\EasyCredit\Core\PayLoad\EasyCreditPayloadFactory;
 
 /**
@@ -183,7 +183,7 @@ class EasyCreditPaymentTest extends UnitTestCase
 
     public function testValidatePaymentEasyCreditNotPossible()
     {
-        Registry::getSession()->setVariable('paymentid', EasyCreditPayment::EASYCREDIT_PAYMENTID);
+        Registry::getSession()->setVariable('paymentid', EasyCreditHelper::EASYCREDIT_PAYMENTID);
 
         $payment = oxNew(PaymentController::class);
         $this->assertNull($payment->validatePayment());
@@ -191,7 +191,7 @@ class EasyCreditPaymentTest extends UnitTestCase
 
     public function testValidatePaymentEasyCreditPossible()
     {
-        Registry::getSession()->setVariable('paymentid', EasyCreditPayment::EASYCREDIT_PAYMENTID);
+        Registry::getSession()->setVariable('paymentid', EasyCreditHelper::EASYCREDIT_PAYMENTID);
 
         $payment = $this->getMock(EasyCreditPaymentController::class, ['isEasyCreditPossible']);
         $payment->expects($this->any())->method('isEasyCreditPossible')->willReturn(true);
@@ -201,7 +201,7 @@ class EasyCreditPaymentTest extends UnitTestCase
 
     public function testValidatePaymentEasyCreditPossibleAddProfileDataException()
     {
-        Registry::getSession()->setVariable('paymentid', EasyCreditPayment::EASYCREDIT_PAYMENTID);
+        Registry::getSession()->setVariable('paymentid', EasyCreditHelper::EASYCREDIT_PAYMENTID);
 
         $payment = $this->getMock(EasyCreditPaymentController::class, ['isEasyCreditPossible', 'addProfileData']);
         $payment->expects($this->any())->method('isEasyCreditPossible')->willReturn(true);

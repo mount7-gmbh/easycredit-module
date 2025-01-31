@@ -17,8 +17,8 @@ use OxidEsales\Eshop\Application\Model\Order;
 use OxidEsales\Eshop\Core\Registry;
 use OxidProfessionalServices\EasyCredit\Application\Model\EasyCreditTradingApiAccess;
 use OxidProfessionalServices\EasyCredit\Core\Di\EasyCreditDicFactory;
-use OxidProfessionalServices\EasyCredit\Core\Domain\EasyCreditPayment;
 use OxidProfessionalServices\EasyCredit\Core\Exception\EasyCreditException;
+use OxidProfessionalServices\EasyCredit\Core\Helper\EasyCreditHelper;
 
 /**
  * Order admin class for easyCredit
@@ -81,7 +81,7 @@ class EasyCreditOrderEasyCreditController extends \OxidEsales\Eshop\Application\
     {
         /** @var $order Order */
         $order = $this->getOrder();
-        return $order && EasyCreditPayment::isEasyCreditInstallmentById($order->getFieldData('oxpaymenttype'));
+        return $order && EasyCreditHelper::isEasyCreditInstallmentById($order->getFieldData('oxpaymenttype'));
     }
 
     /**

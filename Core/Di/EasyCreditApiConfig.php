@@ -14,7 +14,7 @@
 namespace OxidProfessionalServices\EasyCredit\Core\Di;
 
 
-use OxidProfessionalServices\EasyCredit\Core\Domain\EasyCreditPayment;
+use OxidProfessionalServices\EasyCredit\Core\Helper\EasyCreditHelper;
 
 /**
  * This Software is the property of OXID eSales and is protected
@@ -221,7 +221,7 @@ class EasyCreditApiConfig
 
     public function getEasyCreditInstalmentPaymentId()
     {
-        return EasyCreditPayment::EASYCREDIT_PAYMENTID;
+        return EasyCreditHelper::EASYCREDIT_PAYMENTID;
     }
 
     public function getEasyCreditModuleId()
