@@ -408,6 +408,10 @@ class EasyCreditOrder extends EasyCreditOrder_parent
      */
     public function getFInterestsValue()
     {
+        if (!isset($this->oxorder__ecredinterestsvalue) || !is_object($this->oxorder__ecredinterestsvalue)) {
+            return null;
+        }
+
         $interestsValue = $this->oxorder__ecredinterestsvalue->value;
         if ($interestsValue) {
             return Registry::getLang()->formatCurrency($interestsValue, $this->getOrderCurrency());
