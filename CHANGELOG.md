@@ -20,6 +20,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Change log removed from README.md
 - Static call in [EasyCreditPayment](Core/Domain/EasyCreditPayment.php)
 
+### Fixed
+
+- Undefined variable for PHP 8+ warnings
+
 ## 3.0.8 - 2022-09-08
 - Rebranding easyCredit-Ratenkauf
 

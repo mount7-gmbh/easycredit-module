@@ -574,7 +574,7 @@ class EasyCreditPaymentController extends EasyCreditPaymentController_parent
      */
     protected function getValidatedDateOfBirth($requestData, $user)
     {
-        $birthday = $requestData["oxuser__oxbirthdate"];
+        $birthday = $requestData["oxuser__oxbirthdate"] ?? null;
         if (!empty($birthday) && is_array($birthday)) {
             $convertedBirthday = $user->convertBirthday($birthday);
             if ($convertedBirthday) {
