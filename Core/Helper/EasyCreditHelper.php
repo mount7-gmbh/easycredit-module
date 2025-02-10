@@ -23,7 +23,7 @@ use OxidProfessionalServices\EasyCredit\Core\Di\EasyCreditDic;
 class EasyCreditHelper
 {
     /** string paymentid */
-    const EASYCREDIT_PAYMENTID = "easycreditinstallment";
+    public const EASYCREDIT_PAYMENTID = "easycreditinstallment";
 
     /**
      * Returns the price relevant for the example calculation.

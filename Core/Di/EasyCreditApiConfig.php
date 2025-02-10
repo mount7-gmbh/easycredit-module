@@ -9,7 +9,6 @@
 
 namespace OxidProfessionalServices\EasyCredit\Core\Di;
 
-
 use OxidProfessionalServices\EasyCredit\Core\Helper\EasyCreditHelper;
 
 /**
